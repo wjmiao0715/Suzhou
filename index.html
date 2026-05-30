@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="app-shell" aria-labelledby="app-title">
+        <section class="hero" aria-labelledby="app-title description">
+            <div>
+                <h1 id="app-title">Task Manager</h1>
+                <p id="description">Organize your day with accessible, responsive task tracking.</p>
+            </div>
+            <div class="hero-meta">
+                <div class="stats" aria-live="polite" aria-atomic="true">
+                    <p><strong id="total-count">0</strong> tasks</p>
+                    <p><strong id="completed-count">0</strong> completed</p>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark mode">Dark Mode</button>
+            </div>
+        </section>
+
+        <section class="task-panel" aria-labelledby="task-panel-title">
+            <h2 id="task-panel-title">Add a new task</h2>
+            <form id="task-form" class="task-form">
+                <label for="task-input" class="visually-hidden">Task description</label>
+                <input type="text" id="task-input" name="task" placeholder="Enter a new task" autocomplete="off" required>
+                <button type="submit">Add Task</button>
+            </form>
+            <div class="filter-group" role="group" aria-label="Filter tasks">
+                <button type="button" class="filter-button active" data-filter="all">All</button>
+                <button type="button" class="filter-button" data-filter="pending">Pending</button>
+                <button type="button" class="filter-button" data-filter="completed">Completed</button>
+            </div>
+            <div class="task-list-container">
+                <h3 class="visually-hidden">Current tasks</h3>
+                <ul id="task-list" class="task-list" aria-label="Task list"></ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
